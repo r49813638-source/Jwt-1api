@@ -154,9 +154,9 @@ def get_jwt():
         logger.error(f"Error in get_jwt: {e}")
         return jsonify({"error": f"Failed to generate JWT: {str(e)}"}), 500
 # === Startup ===
-import sys
+import os
 
-if __name__ == '__main__':
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
-    print(f"[🚀] Starting {__name__.upper()} on port {port} ...")
-    app.run(host='0.0.0.0', port=port, debug=False)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    print("Server running on port", port)
+    app.run(host="0.0.0.0", port=port)
