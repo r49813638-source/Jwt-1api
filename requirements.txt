@@ -1,0 +1,7 @@
+flask
+httpx
+pycryptodome
+protobuf
+google
+gunicorn
+uvicorn
